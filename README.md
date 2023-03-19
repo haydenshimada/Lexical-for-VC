@@ -1,30 +1,32 @@
-# 📦 INT3402
+# 📕 INT3402_20
 
-Mini project for compiler course
+Midterm project for Compiler course
 
-## Table of Contents
+## 📜Table of Contents
 
-- [📦 INT3402](#-int3402)
-  - [Table of Contents](#table-of-contents)
-  - [📄 Lexical Analyzer](#-lexical-analyzer)
-    - [📜 Introduction](#-introduction)
-    - [🔧 Prerequisites](#-prerequisites)
-    - [🗄️ Data File](#️-data-file)
-    - [⚙️ Run](#️-run)
+- [📕 INT3402_20](#📕-int3402_20)
+  - [📜Table of Contents](#📜table-of-contents)
+  - [💻 Lexical Scanner](#💻-lexical-scanner)
+    - [💡 Introduction](#💡-introduction)
+    - [🔧 Prerequisites](#🔧-prerequisites)
+    - [💾 Data Files](#💾-data-files)
+    - [⚙️ Config file](#⚙️-config-file)
+    - [⏯ Run](#⏯-run)
 
-## 📄 Lexical Analyzer
+## 💻 Lexical Scanner
 
-### 📜 Introduction
+### 💡 Introduction
 
-This is a lexical analyzer for a subset of C language (VC) implemented using Python 3. The lexical analyzer is able to recognize tokens, comments and throw errors for invalid tokens. The language definition is defined in [VC Language Definition](https://duongoku.github.io/archive/2023/VC%20Language%20Definition.pdf).
+This is a lexical analyzer for a subset of C language (VC) implemented using Python 3. The lexical analyzer is able to recognize tokens, comments and throw errors for invalid tokens. The language definition is defined in [VC Language Definition](https://drive.google.com/file/d/181xaizB7Ki5dnOb7vYxOKgWwmQWvev7g/view).
 
 ### 🔧 Prerequisites
 
--   [Python 3.10](https://www.python.org/downloads/) (you can also try other versions, it might work).
+-   [Python 3.9](https://www.python.org/downloads/) (you can also try other versions).
+-   [Hydra](hydra.cc) to read config files
 -   A data file containing information about the Deterministic finite automata (DFA) used in the lexical analyzer, the format of the file is defined in [🗄️ Data File](#️-data-file).
 -   A source code file written in VC language.
 
-### 🗄️ Data File
+### 💾 Data Files
 
 -   The data file is in json format but the extension is _.dat_, there's a [sample data](dfa.dat) file in the root directory of this project. The data file contains the following fields:
     -   `keywords`: a list of keywords in target the language.
@@ -36,20 +38,33 @@ This is a lexical analyzer for a subset of C language (VC) implemented using Pyt
         -   `children` is a list of children of the node, each child is a map from a list of characters to the name of the child node
         -   if the node is the starting node, it will include a field `start` with value _true_.
         -   if the node is terminal, it will include a field `terminal` with value _true_ and a field `terminal_type` with the type of the token from `terminal_types`, else it will have a field `terminal` with value _false_.
--   There is also a [sample source file](sample.vc) for you to use in the root directory of this project.
+-   There is also a [sample source file](data/example_fib.vc) for you to use in the root directory of this project.
 
-### ⚙️ Run
+### ⚙️ Config File
+The config files is in `yaml` format. They're read by Hydra framwork. There are 3 variables:
+- `file_name` (string): .vc file to scan through (default: _data/example_fib.vc_)
+- `data_file` (string): .dat file which stores DFA's states (defailt: _dfa.dat_)
+- `no_comments` (boolean): whether to output comments or not (default: _True_)  
 
-To run the lexical analyzer, run the following command in the terminal (default value for `data_file` is _dfa.dat_):
+### ⏯ Run
+
+To run the lexical scanner, run the following command in the terminal:
 
 ```
-python lexer.py <source_code_file> [data_file]
+python src/lexical.py
+```
+
+To override .vc file for scanning, do:
+```
+python src/lexical.py file_name=<sound_code_file>
+```
+For example:
+```
+python src/lexical.py file_name=data/example_gcd.vc
 ```
 
 To see more information about the command, run the following command in the terminal:
 
 ```
-python lexer.py -h
+python src/lexical.py -h
 ```
-
-You can also run this online on [Repl.it](https://replit.com/@duongoku/Lexer#README.md).
