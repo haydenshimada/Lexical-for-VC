@@ -1,0 +1,3 @@
+file_name: 'data/example_fib.vc'
+data_file: 'dfa.dat'
+no_comments: True

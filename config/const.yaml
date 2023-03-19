@@ -1,0 +1,3 @@
+whitespaces: " \t\n\r\f"
+newline: "\r\n"
+exclude: "EXCLUDE"
