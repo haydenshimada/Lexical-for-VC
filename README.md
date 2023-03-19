@@ -22,9 +22,9 @@ This is a lexical analyzer for a subset of C language (VC) implemented using Pyt
 ### 🔧 Prerequisites
 
 -   [Python 3.9](https://www.python.org/downloads/) (you can also try other versions).
--   [Hydra](hydra.cc) to read config files
--   A data file containing information about the Deterministic finite automata (DFA) used in the lexical analyzer, the format of the file is defined in [🗄️ Data File](#️-data-file).
--   A source code file written in VC language.
+-   [Hydra](https://www.hydra.cc) to read config files
+-   A `.dat` file containing information about the Deterministic finite automata (DFA) used in the lexical analyzer, the format of the file is defined in [💾 Data File](#💾-data-files).
+-   A source code file written in VC language (`.vc` file).
 
 ### 💾 Data Files
 
@@ -38,7 +38,6 @@ This is a lexical analyzer for a subset of C language (VC) implemented using Pyt
         -   `children` is a list of children of the node, each child is a map from a list of characters to the name of the child node
         -   if the node is the starting node, it will include a field `start` with value _true_.
         -   if the node is terminal, it will include a field `terminal` with value _true_ and a field `terminal_type` with the type of the token from `terminal_types`, else it will have a field `terminal` with value _false_.
--   There is also a [sample source file](data/example_fib.vc) for you to use in the root directory of this project.
 
 ### ⚙️ Config File
 The config files is in `yaml` format. They're read by Hydra framwork. There are 3 variables:
