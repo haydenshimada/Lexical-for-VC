@@ -12,24 +12,24 @@
     "void",
     "while"
   ],
-  "special_literals": [
+  "boolean_literal": [
     "true",
     "false"
   ],
   "separators": " \t\n\r\f(){}[],;+-*/=!<>",
   "terminal_types": [
-    "IDENTIFIER",
-    "KEYWORD",
-    "RELATIONAL_OPERATOR",
-    "ASSIGNMENT_OPERATOR",
-    "COMPARATIVE_OPERATOR",
-    "LOGIC_OPERATOR",
-    "ARITHMETIC_OPERATOR",
-    "SEPARATOR",
-    "INTEGER_LITERAL",
-    "FLOAT_LITERAL",
-    "STRING_LITERAL",
-    "COMMENT"
+    "Identifier",
+    "Keyword",
+    "Relational Operators",
+    "Assignment Operator",
+    "Equality Operator",
+    "Logical Operators",
+    "Arithmetic Operators",
+    "Separator",
+    "Integer Literal",
+    "Float Literal",
+    "String Literal",
+    "Comment"
   ],
   "nodes": {
     "0": {
@@ -56,55 +56,55 @@
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789": "1"
       },
       "terminal": true,
-      "terminal_type": "IDENTIFIER"
+      "terminal_type": "Identifier"
     },
     "2": {
       "children": {
         "=": "3"
       },
       "terminal": true,
-      "terminal_type": "RELATIONAL_OPERATOR"
+      "terminal_type": "Relational Operators"
     },
     "3": {
       "children": {},
       "terminal": true,
-      "terminal_type": "RELATIONAL_OPERATOR"
+      "terminal_type": "Relational Operators"
     },
     "4": {
       "children": {
         "=": "5"
       },
       "terminal": true,
-      "terminal_type": "RELATIONAL_OPERATOR"
+      "terminal_type": "Relational Operators"
     },
     "5": {
       "children": {},
       "terminal": true,
-      "terminal_type": "RELATIONAL_OPERATOR"
+      "terminal_type": "Relational Operators"
     },
     "6": {
       "children": {
         "=": "7"
       },
       "terminal": true,
-      "terminal_type": "ASSIGNMENT_OPERATOR"
+      "terminal_type": "Assignment Operator"
     },
     "7": {
       "children": {},
       "terminal": true,
-      "terminal_type": "COMPARATIVE_OPERATOR"
+      "terminal_type": "Equality Operator"
     },
     "8": {
       "children": {
         "=": "9"
       },
       "terminal": true,
-      "terminal_type": "COMPARATIVE_OPERATOR"
+      "terminal_type": "Logical Operator"
     },
     "9": {
       "children": {},
       "terminal": true,
-      "terminal_type": "COMPARATIVE_OPERATOR"
+      "terminal_type": "Equality Operator"
     },
     "10": {
       "children": {
@@ -115,7 +115,7 @@
     "11": {
       "children": {},
       "terminal": true,
-      "terminal_type": "LOGIC_OPERATOR"
+      "terminal_type": "Logical Operators"
     },
     "12": {
       "children": {
@@ -126,17 +126,17 @@
     "13": {
       "children": {},
       "terminal": true,
-      "terminal_type": "LOGIC_OPERATOR"
+      "terminal_type": "Logical Operators"
     },
     "14": {
       "children": {},
       "terminal": true,
-      "terminal_type": "ARITHMETIC_OPERATOR"
+      "terminal_type": "Arithmetic Operators"
     },
     "15": {
       "children": {},
       "terminal": true,
-      "terminal_type": "SEPARATOR"
+      "terminal_type": "Separator"
     },
     "16": {
       "children": {
@@ -145,7 +145,7 @@
         "Ee": "19"
       },
       "terminal": true,
-      "terminal_type": "INTEGER_LITERAL"
+      "terminal_type": "Integer Literal"
     },
     "17": {
       "children": {
@@ -159,7 +159,7 @@
         "Ee": "19"
       },
       "terminal": true,
-      "terminal_type": "FLOAT_LITERAL"
+      "terminal_type": "Float Literal"
     },
     "19": {
       "children": {
@@ -179,7 +179,7 @@
         "0123456789": "21"
       },
       "terminal": true,
-      "terminal_type": "FLOAT_LITERAL"
+      "terminal_type": "Float Literal"
     },
     "22": {
       "children": {
@@ -198,7 +198,7 @@
     "24": {
       "children": {},
       "terminal": true,
-      "terminal_type": "STRING_LITERAL"
+      "terminal_type": "String Literal"
     },
     "25": {
       "children": {
@@ -206,7 +206,7 @@
         "/": "29"
       },
       "terminal": true,
-      "terminal_type": "ARITHMETIC_OPERATOR"
+      "terminal_type": "Arithmetic Operators"
     },
     "26": {
       "children": {
@@ -226,7 +226,7 @@
     "28": {
       "children": {},
       "terminal": true,
-      "terminal_type": "COMMENT"
+      "terminal_type": "Comment"
     },
     "29": {
       "children": {
@@ -238,7 +238,7 @@
     "30": {
       "children": {},
       "terminal": true,
-      "terminal_type": "COMMENT"
+      "terminal_type": "Comment"
     }
   }
 }

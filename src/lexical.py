@@ -18,7 +18,7 @@ def main(cfg: DictConfig):
     with open(datafile, "r") as file:
         data = json.load(file)
         KEYWORDS = data["keywords"]
-        SPECIAL_LITERALS = data["special_literals"]
+        BOOLEAN_LITERALS = data["boolean_literal"]
         SEPARATORS = data["separators"]
         TOKEN_TYPES = data["terminal_types"]
         nodes = data["nodes"]
@@ -26,13 +26,13 @@ def main(cfg: DictConfig):
     # Parse the source code
     print("Parsing file: " + filename)
     start = time.time()
-    result = lexer(source, nodes, KEYWORDS, SPECIAL_LITERALS, SEPARATORS)
+    result = lexer(source, nodes, KEYWORDS, BOOLEAN_LITERALS, SEPARATORS)
     end = time.time()
     print(f"Done in {end-start:.3f} seconds.")
 
     # Remove comments if the user specified the -n or --no-comments option
     if no_comments:
-        result = [token for token in result if token["type"] != "COMMENT"]
+        result = [token for token in result if token["type"] != "Comment"]
 
     # Export the tokens
     verbose = "======= The VC compiler ======="
