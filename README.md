@@ -55,13 +55,16 @@ python src/lexical.py
 
 To override .vc file for scanning, do:
 ```
-python src/lexical.py file_name=<sound_code_file>
+python src/lexical.py file_name=<source_code_file>
 ```
 For example:
 ```
 python src/lexical.py file_name=data/example_gcd.vc
 ```
-
+If prefered, comments can be put to ouput:
+```
+python src/lexical.py no_comments=False
+```
 To see more information about the command, run the following command in the terminal:
 
 ```
